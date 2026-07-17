@@ -10,3 +10,8 @@ prototype/shots
 prototype/art
 prototype/aprovacao.html
 *.log
+
+# artefatos de build do tsc
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
