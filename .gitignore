@@ -5,6 +5,8 @@ dist-ssr
 .DS_Store
 .vite
 
-# ferramentas de protótipo
+# ferramentas de protótipo (saídas geradas)
 prototype/shots
+prototype/art
+prototype/aprovacao.html
 *.log
