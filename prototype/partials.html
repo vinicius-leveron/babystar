@@ -1,0 +1,69 @@
+<!-- ============================================================
+  BABYSTAR — Partials canônicos (copiar EXATAMENTE nos builds)
+  Cada tela = arquivo standalone que linka babystar.css e usa
+  esta estrutura. O miolo (.screen-body) é o que varia.
+============================================================= -->
+
+<!-- ESTRUTURA BASE DE UMA TELA MOBILE -->
+<!--
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../babystar.css">
+<title>NN — Nome da tela</title></head>
+<body class="stage">
+  <div class="phone" data-us="US 2.x" data-title="Nome da tela">
+    <div class="stars"></div>
+    <div class="dynamic-island"></div>
+    [STATUSBAR]
+    <div class="screen-body"> ...conteúdo... </div>
+    [TABBAR]  (somente telas pós-onboarding)
+  </div>
+</body></html>
+-->
+
+<!-- [STATUSBAR] -->
+<div class="statusbar">
+  <span>9:41</span>
+  <span class="icons">
+    <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><rect x="0" y="7" width="3" height="5" rx="1" fill="#F4F3FF"/><rect x="5" y="5" width="3" height="7" rx="1" fill="#F4F3FF"/><rect x="10" y="2.5" width="3" height="9.5" rx="1" fill="#F4F3FF"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#F4F3FF" opacity=".4"/></svg>
+    <svg width="17" height="12" viewBox="0 0 17 12" fill="none"><path d="M8.5 9.6a2.2 2.2 0 0 1 2.1 1.5L8.5 12 6.4 11.1a2.2 2.2 0 0 1 2.1-1.5Z" fill="#F4F3FF"/><path d="M3.4 8.2a7.2 7.2 0 0 1 10.2 0l-1.6 1.6a5 5 0 0 0-7 0L3.4 8.2Z" fill="#F4F3FF"/><path d="M.5 5.3a11.3 11.3 0 0 1 16 0l-1.6 1.6a9 9 0 0 0-12.8 0L.5 5.3Z" fill="#F4F3FF"/></svg>
+    <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x="0.5" y="0.5" width="21" height="11" rx="3.5" stroke="#F4F3FF" opacity=".5"/><rect x="2" y="2" width="15" height="8" rx="2" fill="#F5C86B"/><path d="M23.5 4v4a2.2 2.2 0 0 0 0-4Z" fill="#F4F3FF" opacity=".5"/></svg>
+  </span>
+</div>
+
+<!-- [TABBAR] — trocar .active conforme a tela: home | sons | stats | perfil -->
+<div class="tabbar">
+  <div class="tab active" data-tab="home">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+    Início
+  </div>
+  <div class="tab" data-tab="sons">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+    Sons
+  </div>
+  <div class="tab"><div class="tab-plus">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+  </div></div>
+  <div class="tab" data-tab="stats">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+    Evolução
+  </div>
+  <div class="tab" data-tab="perfil">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-3.6 4.4-5.5 8-5.5s6.5 1.9 8 5.5"/></svg>
+    Perfil
+  </div>
+</div>
+
+<!-- [ESTRELA DA MARCA] — logotipo/ícone BabyStar (4 pontas + brilho) -->
+<svg class="star-glyph" width="64" height="64" viewBox="0 0 64 64" fill="none">
+  <path d="M32 6c1.8 10.8 4.6 18.4 9.4 22.9C46.1 33.2 53 35.4 62 36.6v.001C53 38.8 46.1 41 41.4 45.5 36.6 50 33.8 57.4 32 68h0c-1.8-10.6-4.6-18-9.4-22.5C17.9 41 11 38.8 2 36.6v-.001C11 35.4 17.9 33.2 22.6 28.9 27.4 24.4 30.2 16.8 32 6Z" transform="translate(0 -3) scale(.94)" fill="url(#gstar)"/>
+  <circle cx="49" cy="14" r="2.4" fill="#F5C86B" opacity=".9"/>
+  <circle cx="14" cy="50" r="1.7" fill="#A9B2E8" opacity=".9"/>
+  <defs><linearGradient id="gstar" x1="10" y1="8" x2="52" y2="58"><stop stop-color="#FBDF9E"/><stop offset=".55" stop-color="#F5C86B"/><stop offset="1" stop-color="#E8A94E"/></linearGradient></defs>
+</svg>
+
+<!-- [WORDMARK] -->
+<div style="display:flex;align-items:center;gap:10px">
+  <!-- estrela 28px: mesmo SVG acima com width/height 28 -->
+  <span style="font-size:22px;font-weight:800;letter-spacing:-.3px">Baby<span class="gold">Star</span></span>
+</div>
