@@ -27,6 +27,26 @@ npm run dev        # http://localhost:5173
 - A rota `/` é a **galeria da jornada** — todas as telas em molduras de iPhone/browser, organizadas por fase. Clique em qualquer tela para abri-la em tela cheia.
 - `npm run build` gera o site estático em `dist/` (base relativa — serve de qualquer caminho).
 
+## Deploy na Vercel
+
+O projeto já está pronto para deploy (config em `vercel.json`). Duas formas:
+
+**1. Painel da Vercel (recomendado, sem CLI)**
+1. Acesse [vercel.com/new](https://vercel.com/new) e faça login com o GitHub.
+2. Importe o repositório `vinicius-leveron/babystar`.
+3. Selecione o branch `claude/napper-landing-page-exhojt` (ou faça merge para a branch padrão primeiro).
+4. A Vercel detecta o Vite automaticamente — **Build:** `npm run build`, **Output:** `dist`. É só clicar em **Deploy**.
+5. Cada novo push nesse branch redeploya sozinho.
+
+**2. CLI (a partir da sua máquina)**
+```bash
+npm i -g vercel
+vercel            # preview
+vercel --prod     # produção
+```
+
+> Observação: é um front-end estático (sem back-end). Todo o conteúdo é mockado — nada é persistido.
+
 ## Telas (19) e cobertura das histórias
 
 17 telas de app + 2 de painel admin. Mapeamento das US do ClickUp:
