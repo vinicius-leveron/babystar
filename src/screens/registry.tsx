@@ -49,7 +49,7 @@ export const screens: ScreenMeta[] = [
   { n: 2, path: '/onboarding', title: 'Cadastro afetivo', caption: 'Nome da mãe, do bebê, nascimento e sexo.', phase: 'A · Chegada', kind: 'mobile', Component: Onboarding },
 
   { n: 3, path: '/despertar', title: 'Despertar de hoje', caption: '“Que horas a Olivia acordou?” — a rotina sai daqui, na hora.', phase: 'B · Rotina no minuto 1', kind: 'mobile', Component: DespertarHoje },
-  { n: 4, path: '/rotina', title: 'Rotina do dia', caption: 'Gerada da idade + despertar de hoje. Sem esperar 48h.', phase: 'B · Rotina no minuto 1', us: 'US 2.2', kind: 'mobile', Component: Rotina },
+  { n: 4, path: '/rotina', title: 'Rotina do dia', caption: 'IA gera as regras (temperamento + idade + despertar) — o engine. US 2.1 · 2.2.', phase: 'B · Rotina no minuto 1', us: 'US 2.1 · 2.2', kind: 'mobile', Component: Rotina },
   { n: 5, path: '/app/home', title: 'Home · anel do dia', caption: 'Zona de aprofundamento + a rotina do dia.', phase: 'B · Rotina no minuto 1', us: 'US 2.3', kind: 'mobile', Component: Home },
   { n: 6, path: '/notificacoes', title: 'Notificações proativas', caption: '30 min antes, na hora, e “2h sem novidade”.', phase: 'B · Rotina no minuto 1', us: 'US 2.4', kind: 'mobile', Component: Notificacoes },
 
@@ -67,7 +67,7 @@ export const screens: ScreenMeta[] = [
   { n: 16, path: '/atividades', title: 'Atividades do dia', caption: 'Camada 3 · gasto de energia por idade.', phase: 'E · Personalizar', kind: 'mobile', Component: Atividades },
 
   { n: 17, path: '/app/evolucao', title: 'Estatísticas', caption: 'Sono total, hora de dormir, despertares.', phase: 'F · Evolução & conta', kind: 'mobile', Component: Estatisticas },
-  { n: 18, path: '/chat', title: 'Chat com a Dra. Denise', caption: 'IA treinada pela especialista.', phase: 'F · Evolução & conta', us: 'US 2.1', kind: 'mobile', Component: Chat },
+  { n: 18, path: '/chat', title: 'Chat com a Dra. Denise', caption: 'Assistente IA treinada pela especialista (US 2.10).', phase: 'F · Evolução & conta', us: 'US 2.10', kind: 'mobile', Component: Chat },
   { n: 19, path: '/app/perfil', title: 'Perfil', caption: 'Bebê, rotina, notificações, assinatura.', phase: 'F · Evolução & conta', kind: 'mobile', Component: Perfil },
   { n: 20, path: '/paywall', title: 'Paywall', caption: '7 dias grátis, planos em R$, garantia.', phase: 'F · Evolução & conta', kind: 'mobile', Component: Paywall },
 

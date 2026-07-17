@@ -73,8 +73,8 @@ const section = (p) => {
 }
 
 const usTable = [
-  ['US 2.1', 'Integração com modelo de IA', 'Chat com a Dra. Denise'],
-  ['US 2.2', 'Engine de rotina por idade', 'Rotina do dia'],
+  ['US 2.1', 'IA que cria as regras da rotina (temperamento + idade + horários) — o engine', 'Rotina do dia'],
+  ['US 2.2', 'Engine de rotina por idade do bebê', 'Rotina do dia / Home'],
   ['US 2.3', 'Tela principal com a rotina', 'Home · anel do dia'],
   ['US 2.4', 'Notificações proativas', 'Notificações'],
   ['US 2.5', 'Timer de soneca (play/pause/stop)', 'Timer de soneca'],
@@ -82,6 +82,7 @@ const usTable = [
   ['US 2.7', 'Diário (mamada, fralda, peso…)', 'Diário de anotações'],
   ['US 2.8', 'Editor de prompts no admin', 'Editor de prompts'],
   ['US 2.9', 'Listagem/busca de usuárias', 'Usuárias'],
+  ['US 2.10', 'Chat / assistente IA da Dra. Denise', 'Chat com a Dra. Denise'],
 ]
 
 const html = `<div class="wrap">

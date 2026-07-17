@@ -47,17 +47,17 @@ O protótipo é a interface. Abaixo, os blocos de funcionalidade real, com nota 
 - Modelo de dados: mãe, bebê (nome, nascimento, sexo), eventos de sono, registros do diário, assinatura.
 - Persistência real (hoje nada é salvo).
 
-### Bloco B — Engine de rotina (US 2.2) · **o coração**
-- Tabelas de pressão de sono/cronotipo por faixa etária (já existem nos documentos da Denise).
+### Bloco B — Engine de rotina + IA que cria as regras (US 2.1 · 2.2) · **o coração**
+- **US 2.1 — IA cria as regras da rotina** a partir de temperamento + idade + horários da nenê (é o engine).
+- **US 2.2 — Engine por idade**: tabelas de pressão de sono/cronotipo por faixa etária (já existem nos documentos da Denise).
 - Cálculo: **idade + horário que acordou → sonecas do dia + hora de dormir**.
 - **Recalibração**: ao registrar a soneca real (stop), reprojeta o resto do dia.
 - Regra **< 2 meses** (não libera, só anota).
 - Contagem regressiva + gatilhos de notificação (30 min / na hora / 2h).
+- Plugar os **prompts das camadas GPS** (já prontos nos docs) no modelo (Claude).
 - *MVP:* engine com as tabelas fixas por idade. *Ideal:* IA calibrando com o histórico real.
 
-### Bloco C — IA (US 2.1)
-- Integração com **Claude**.
-- Plugar os **prompts das camadas GPS** (já prontos nos docs).
+### Bloco C — Chat / assistente IA da Dra. Denise (US 2.10)
 - Chat "consultora Dra. Denise" **nutrido com o conteúdo do curso** (aulas transcritas) — o que o Wesley chamou de "sua consultora particular".
 - *MVP alternativo (Wesley):* rodar no **WhatsApp** (chatbot que manda lembretes e recebe o input da mãe), em vez de chat interno.
 
