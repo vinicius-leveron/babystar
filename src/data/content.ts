@@ -350,6 +350,46 @@ export const article = {
   nextUp: 'Diminuindo os despertares noturnos',
 }
 
+// ---------- Admin · Dashboard (negócio) ----------
+export const adminDashboard = {
+  kpis: [
+    { label: 'Assinantes ativas', value: '3.482', delta: '+12%', good: true },
+    { label: 'MRR', value: 'R$ 104,2 mil', delta: '+8%', good: true },
+    { label: 'Conversão trial → pago', value: '34%', delta: '+3 pp', good: true },
+    { label: 'Churn mensal', value: '4,1%', delta: '−0,6 pp', good: true },
+  ],
+  growthMonths: ['Set', 'Out', 'Nov', 'Dez', 'Jan', 'Fev'],
+  growth: [1200, 1650, 2100, 2540, 3010, 3482],
+  funnel: [
+    { step: 'Instalou o app', pct: 100 },
+    { step: 'Cadastrou o bebê', pct: 82 },
+    { step: 'Recebeu a 1ª rotina', pct: 76 },
+    { step: 'Registrou uma soneca', pct: 58 },
+    { step: 'Assinou', pct: 34 },
+  ],
+  engagement: [
+    { name: 'Rotina do dia', pct: 91 },
+    { name: 'Notificações', pct: 84 },
+    { name: 'Timer de soneca', pct: 67 },
+    { name: 'Sons para dormir', pct: 61 },
+    { name: 'Diário', pct: 49 },
+    { name: 'Aprender (aulas)', pct: 43 },
+    { name: 'Chat Denise IA', pct: 38 },
+  ],
+  topAulas: [
+    { title: 'O que é pressão de sono', views: '2.140' },
+    { title: 'Por que o bebê acorda à noite', views: '1.870' },
+    { title: 'Montando o ritual da noite', views: '1.320' },
+  ],
+  plans: { mensal: 58, anual: 42 },
+  byAge: [
+    { faixa: '0–3 m', pct: 22 },
+    { faixa: '4–6 m', pct: 31 },
+    { faixa: '7–12 m', pct: 29 },
+    { faixa: '1–2 a', pct: 18 },
+  ],
+}
+
 // ---------- Admin · Aulas / Conteúdo ----------
 export const adminAulas = [
   { title: 'O que é pressão de sono', trilha: 'Comece por aqui', tipo: 'Vídeo', status: 'Publicado', premium: false, updated: 'há 2 dias' },

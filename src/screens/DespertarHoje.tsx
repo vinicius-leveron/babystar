@@ -30,24 +30,20 @@ export function DespertarHoje() {
             <br />
             acordou hoje?
           </h1>
-          <p className="mt-2 max-w-[290px] text-[13.5px] leading-relaxed text-ink2">
-            A partir da idade da {persona.babyName} ({persona.babyAgeMonths} meses), o BabyStar monta a rotina do dia
-            inteiro na hora — sem esperar 48h.
-          </p>
 
           {/* horário selecionado */}
-          <div className="mt-6 flex items-center gap-2">
+          <div className="mt-8 flex items-center gap-2">
             <Sun size={22} className="text-gold" />
             <span className="font-mono text-[52px] font-extrabold leading-none tabular-nums">{time}</span>
           </div>
 
-          {/* atalhos de horário */}
-          <div className="mt-6 flex flex-wrap justify-center gap-2">
+          {/* atalhos de horário — uma linha só */}
+          <div className="mt-6 flex justify-center gap-2">
             {quick.map((t) => (
               <button
                 key={t}
                 onClick={() => setTime(t)}
-                className={`rounded-full px-4 py-2 text-[14px] font-bold transition ${
+                className={`rounded-full px-3 py-2 text-[13.5px] font-bold transition ${
                   time === t
                     ? 'bg-gold-grad text-[#251A05] shadow-gold-sm'
                     : 'border border-white/[0.16] bg-white/[0.06] text-ink2'

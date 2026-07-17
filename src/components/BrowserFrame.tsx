@@ -15,7 +15,7 @@ export function BrowserFrame({
   children,
 }: {
   url: string
-  active: 'Prompts' | 'Aulas' | 'Usuárias'
+  active: 'Painel' | 'Prompts' | 'Aulas' | 'Usuárias'
   children: ReactNode
 }) {
   return (

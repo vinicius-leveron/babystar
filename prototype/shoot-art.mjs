@@ -23,9 +23,10 @@ const screens = [
   ['18-chat', '/chat', 430, 900],
   ['19-perfil', '/app/perfil', 430, 900],
   ['20-paywall', '/paywall', 430, 900],
-  ['21-admin-prompts', '/admin/prompts', 1200, 760],
-  ['22-admin-aulas', '/admin/aulas', 1200, 760],
-  ['23-admin-usuarias', '/admin/usuarias', 1200, 760],
+  ['21-admin-painel', '/admin/painel', 1200, 760],
+  ['22-admin-prompts', '/admin/prompts', 1200, 760],
+  ['23-admin-aulas', '/admin/aulas', 1200, 760],
+  ['24-admin-usuarias', '/admin/usuarias', 1200, 760],
 ]
 
 const base = process.env.BASE || 'http://localhost:4173'

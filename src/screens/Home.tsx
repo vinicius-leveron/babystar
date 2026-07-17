@@ -48,8 +48,8 @@ export function Home() {
         {/* anel do dia */}
         <button onClick={() => nav('/rotina')} className="mt-3">
           <DayRing size={286} markers={markers}>
-            <p className="text-[12px] font-bold uppercase tracking-[1px] text-lav">Próxima soneca em</p>
-            <p className="text-[46px] font-extrabold leading-none text-gradient-gold">3 min</p>
+            <p className="text-[12px] font-bold uppercase tracking-[1.5px] text-lav">Próxima soneca</p>
+            <p className="text-[48px] font-extrabold leading-none text-gradient-gold">3 min</p>
           </DayRing>
         </button>
 

@@ -19,6 +19,7 @@ import { Estatisticas } from './Estatisticas'
 import { Chat } from './Chat'
 import { Perfil } from './Perfil'
 import { Paywall } from './Paywall'
+import { AdminDashboard } from './AdminDashboard'
 import { AdminPrompts } from './AdminPrompts'
 import { AdminAulas } from './AdminAulas'
 import { AdminUsuarias } from './AdminUsuarias'
@@ -70,9 +71,10 @@ export const screens: ScreenMeta[] = [
   { n: 19, path: '/app/perfil', title: 'Perfil', caption: 'Bebê, rotina, notificações, assinatura.', phase: 'F · Evolução & conta', kind: 'mobile', Component: Perfil },
   { n: 20, path: '/paywall', title: 'Paywall', caption: '7 dias grátis, planos em R$, garantia.', phase: 'F · Evolução & conta', kind: 'mobile', Component: Paywall },
 
-  { n: 21, path: '/admin/prompts', title: 'Admin · Editor de prompts', caption: 'CRUD dos prompts das camadas GPS.', phase: 'G · Admin', us: 'US 2.8', kind: 'admin', Component: AdminPrompts },
-  { n: 22, path: '/admin/aulas', title: 'Admin · Aulas & conteúdo', caption: 'Inserir e gerir aulas em vídeo e artigos.', phase: 'G · Admin', kind: 'admin', Component: AdminAulas },
-  { n: 23, path: '/admin/usuarias', title: 'Admin · Usuárias', caption: 'Listagem e busca de usuárias.', phase: 'G · Admin', us: 'US 2.9', kind: 'admin', Component: AdminUsuarias },
+  { n: 21, path: '/admin/painel', title: 'Admin · Painel do negócio', caption: 'KPIs, crescimento, funil e engajamento para a Denise.', phase: 'G · Admin', kind: 'admin', Component: AdminDashboard },
+  { n: 22, path: '/admin/prompts', title: 'Admin · Editor de prompts', caption: 'CRUD dos prompts das camadas GPS.', phase: 'G · Admin', us: 'US 2.8', kind: 'admin', Component: AdminPrompts },
+  { n: 23, path: '/admin/aulas', title: 'Admin · Aulas & conteúdo', caption: 'Inserir e gerir aulas em vídeo e artigos.', phase: 'G · Admin', kind: 'admin', Component: AdminAulas },
+  { n: 24, path: '/admin/usuarias', title: 'Admin · Usuárias', caption: 'Listagem e busca de usuárias.', phase: 'G · Admin', us: 'US 2.9', kind: 'admin', Component: AdminUsuarias },
 ]
 
 export const phases: Phase[] = [
