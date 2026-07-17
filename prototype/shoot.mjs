@@ -34,7 +34,7 @@ const browser = await chromium.launch({
 })
 for (const [name, path, w, h] of screens) {
   const page = await browser.newPage({ viewport: { width: w, height: h }, deviceScaleFactor: 2 })
-  await page.goto(`${base}/#${path}`, { waitUntil: 'networkidle' })
+  await page.goto(`${base}/?bare=1#${path}`, { waitUntil: 'networkidle' })
   await page.waitForTimeout(1600) // deixa animações assentarem
   await page.screenshot({ path: `${out}/${name}.png` })
   await page.close()

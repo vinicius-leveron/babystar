@@ -26,12 +26,10 @@ export function Timer() {
       <ScreenHeader back title="Soneca em andamento" />
       <Body>
         <div className="flex flex-1 flex-col items-center justify-center">
-          <p className="text-[13px] font-bold uppercase tracking-[1px] text-lav">
-            {persona.babyName} está dormindo
-          </p>
+          <p className="text-[15px] font-bold text-gold">{persona.babyName} está no sono profundo 💤</p>
 
           <div className="relative my-6 flex h-64 w-64 items-center justify-center">
-            <div className={`absolute inset-0 rounded-full border-2 border-gold/30 ${running ? 'animate-[pulse_2.5s_ease-in-out_infinite]' : ''}`} />
+            <div className={`absolute inset-0 rounded-full border-[3px] border-gold/60 ${running ? 'animate-[pulse_2.5s_ease-in-out_infinite]' : ''}`} style={{ boxShadow: '0 0 30px rgba(245,200,107,0.18)' }} />
             <div className="absolute inset-6 rounded-full border border-white/10 bg-white/[0.03]" />
             <div className="text-center">
               <p className="font-mono text-[52px] font-extrabold leading-none tracking-tight">
@@ -46,17 +44,22 @@ export function Timer() {
           </div>
         </div>
 
-        <div className="flex items-center justify-center gap-5 pb-4">
-          <button
-            onClick={() => setRunning((r) => !r)}
-            className="flex h-16 w-16 items-center justify-center rounded-full border border-white/[0.16] bg-white/[0.07] text-ink"
-          >
-            {running ? <Pause size={26} /> : <Play size={26} />}
-          </button>
-          <button className="flex h-20 w-20 items-center justify-center rounded-full bg-gold-grad text-[#251A05] shadow-gold">
-            <Square size={30} fill="currentColor" />
-          </button>
-          <div className="h-16 w-16" />
+        <div className="flex items-end justify-center gap-8 pb-4">
+          <div className="flex flex-col items-center gap-1.5">
+            <button
+              onClick={() => setRunning((r) => !r)}
+              className="flex h-16 w-16 items-center justify-center rounded-full border border-white/[0.16] bg-white/[0.07] text-ink"
+            >
+              {running ? <Pause size={26} /> : <Play size={26} />}
+            </button>
+            <span className="text-[11px] font-bold text-muted">{running ? 'Pausar' : 'Retomar'}</span>
+          </div>
+          <div className="flex flex-col items-center gap-1.5">
+            <button className="flex h-20 w-20 items-center justify-center rounded-full bg-gold-grad text-[#251A05] shadow-gold">
+              <Square size={30} fill="currentColor" />
+            </button>
+            <span className="text-[11px] font-bold text-gold">Encerrar</span>
+          </div>
         </div>
         <p className="pb-4 text-center text-[12.5px] text-muted">
           Ao encerrar, a soneca é salva no diário e a pressão de sono é atualizada.

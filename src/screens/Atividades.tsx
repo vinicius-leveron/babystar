@@ -5,7 +5,7 @@ import { activities } from '../data/content'
 
 export function Atividades() {
   return (
-    <PhoneFrame seed={111} scroll>
+    <PhoneFrame seed={111}>
       <ScreenHeader back title="Atividades" />
       <Body scroll>
         <div className="bs-card-gold">

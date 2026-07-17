@@ -76,7 +76,7 @@ export function AdminUsuarias() {
                 <td className="border-b border-white/[0.05] px-4 py-3.5">
                   <span className={`rounded-full px-2.5 py-1 text-[11.5px] font-bold ${planTag[u.plan]}`}>{u.plan}</span>
                 </td>
-                <td className="border-b border-white/[0.05] px-4 py-3.5 text-muted">{u.last}</td>
+                <td className="border-b border-white/[0.05] px-4 py-3.5 text-ink2">{u.last}</td>
               </tr>
             ))}
           </tbody>

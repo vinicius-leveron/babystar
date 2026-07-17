@@ -1,23 +1,23 @@
 import { PhoneFrame } from '../components/PhoneFrame'
 import { TabBar } from '../components/TabBar'
 import { ScreenHeader } from '../components/ui'
-import { stats } from '../data/content'
+import { stats, persona } from '../data/content'
 
 export function Estatisticas() {
   return (
     <PhoneFrame seed={131}>
       <ScreenHeader title="Evolução" />
-      <div className="flex flex-1 flex-col gap-3.5 overflow-y-auto no-scrollbar px-[22px] pb-3 pt-1">
+      <div className="flex flex-1 flex-col gap-3.5 overflow-y-auto no-scrollbar px-[22px] pb-6 pt-1">
         {/* card sono total — linha */}
         <div className="bs-card">
           <div className="mb-2 flex items-center justify-center">
             <span className="rounded-full bg-white/[0.06] px-3 py-1 text-[13px] font-bold">
-              Sono total: <span className="text-gold">{stats.totalSleep}</span>
+              Sono ontem: <span className="text-gold">{stats.yesterdaySleep}</span>
             </span>
           </div>
           <LineChart data={stats.sleepCurve} labels={stats.week} sub={stats.dates} />
-          <p className="mt-2 text-center text-[12.5px] text-muted">
-            Média: <span className="font-bold text-lav">{stats.avgSleep}</span>
+          <p className="mt-2 text-center text-[12.5px] text-ink2">
+            Média da semana: <span className="font-bold text-gold">{stats.avgSleep}</span>
           </p>
         </div>
 
@@ -44,8 +44,13 @@ export function Estatisticas() {
         {/* card hora de dormir — barras */}
         <div className="bs-card">
           <p className="mb-3 text-[13.5px] font-extrabold">Hora de dormir</p>
-          <BarChart data={stats.bedtime} labels={stats.week} sub={stats.dates} />
+          <BarChart data={stats.bedtime} labels={stats.week} sub={stats.dates} valueLabels={stats.bedtimeLabels} />
         </div>
+
+        <p className="px-2 pb-1 text-center text-[12.5px] leading-relaxed text-ink2">
+          A {persona.babyName} está dormindo mais cedo e acordando menos à noite — sinal de que a pressão de sono está
+          bem organizada. 💛
+        </p>
       </div>
       <TabBar active="stats" />
     </PhoneFrame>
@@ -87,18 +92,30 @@ function LineChart({ data, labels, sub }: { data: number[]; labels: string[]; su
   )
 }
 
-function BarChart({ data, labels, sub }: { data: number[]; labels: string[]; sub: string[] }) {
+function BarChart({
+  data,
+  labels,
+  sub,
+  valueLabels,
+}: {
+  data: number[]
+  labels: string[]
+  sub: string[]
+  valueLabels: string[]
+}) {
   const min = Math.min(...data) - 0.3
   const max = Math.max(...data) + 0.3
   return (
     <div>
-      <div className="flex h-[110px] items-end justify-between gap-1.5">
+      <div className="flex h-[124px] items-end justify-between gap-1.5">
         {data.map((d, i) => (
-          <div
-            key={i}
-            className="flex-1 rounded-t-md bg-gradient-to-t from-lav/40 to-lav"
-            style={{ height: `${((d - min) / (max - min)) * 100}%` }}
-          />
+          <div key={i} className="flex flex-1 flex-col items-center justify-end">
+            <span className="mb-1 text-[9.5px] font-bold text-ink2">{valueLabels[i]}</span>
+            <div
+              className="w-full rounded-t-md bg-gradient-to-t from-lav/40 to-lav"
+              style={{ height: `${((d - min) / (max - min)) * 88}px` }}
+            />
+          </div>
         ))}
       </div>
       <Axis labels={labels} sub={sub} />

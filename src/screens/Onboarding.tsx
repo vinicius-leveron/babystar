@@ -6,25 +6,23 @@ import { Body, ScreenHeader, ProgressBar } from '../components/ui'
 export function Onboarding() {
   const nav = useNavigate()
   return (
-    <PhoneFrame seed={11} scroll>
+    <PhoneFrame seed={11}>
       <ScreenHeader back />
-      <Body>
+      <Body scroll>
         <div className="px-1">
           <ProgressBar pct={20} />
           <p className="mt-2 text-[12.5px] text-muted">Passo 1 de 5 · Vamos nos conhecer</p>
         </div>
 
-        <div className="mt-1 flex items-center gap-3">
-          <div className="flex h-14 w-14 flex-none items-center justify-center rounded-2xl bg-white/[0.06]">
-            <StarLogo size={40} />
-          </div>
-          <div>
-            <h1 className="text-[22px] font-extrabold leading-tight">Seja muito bem-vinda!</h1>
-            <p className="text-[13.5px] text-ink2">Eu sou a Denise. Vamos buscar a pressão de sono ideal do seu bebê.</p>
-          </div>
+        <div className="mt-1 flex flex-col gap-1 px-1">
+          <StarLogo size={34} />
+          <h1 className="mt-1.5 text-[22px] font-extrabold leading-tight">Seja muito bem-vinda!</h1>
+          <p className="text-[13.5px] leading-snug text-ink2">
+            Eu sou a Dra. Denise. Vamos buscar a pressão de sono ideal do seu bebê.
+          </p>
         </div>
 
-        <div className="mt-2 flex flex-col gap-3">
+        <div className="mt-1 flex flex-col gap-3">
           <Field label="Como você se chama?" placeholder="Seu nome" value="Amanda" />
           <Field label="E o nome do seu bebê?" placeholder="Nome do bebê" value="Olivia" />
           <Field label="Data de nascimento do bebê" placeholder="dd/mm/aaaa" value="12/10/2025" />

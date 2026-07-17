@@ -148,7 +148,7 @@ export const routine = {
 export const notifications = [
   { emoji: '🌟', title: 'Entrando na zona de aprofundamento', body: 'O cérebro da Olivia está pronto para o sono profundo. Comece o ritual agora.', when: 'agora' },
   { emoji: '⭐', title: 'Prepare o ritual', body: 'Em 15 minutos a Olivia entra na zona de aprofundamento do sono.', when: '15 min' },
-  { emoji: '🌙', title: 'Janela neurológica perdida', body: 'Sem culpa, Amanda. Já recalculei: a próxima zona da Olivia é às 15:40. Se precisar, use o sono em movimento.', when: '13:52' },
+  { emoji: '🌙', title: 'Zona de aprofundamento perdida', body: 'Sem culpa, Amanda. Já recalculei: a próxima zona da Olivia é às 15:40. Se precisar, use o sono em movimento.', when: '13:52' },
   { emoji: '🧸', title: 'Dica de hoje', body: 'Túnel de caixas para a Olivia atravessar engatinhando — gasta energia e constrói a pressão de sono da noite.', when: '10:00' },
   { emoji: '📈', title: 'Rotina pronta!', body: '48h completas! A rotina personalizada da Olivia está pronta.', when: 'ontem' },
 ]
@@ -167,6 +167,7 @@ export const trackKinds: TrackKind[] = [
   { key: 'diaper', label: 'Fralda', emoji: '🧷', status: 'Registrado às 9:40', done: true },
   { key: 'weight', label: 'Peso', emoji: '⚖️', status: '8,4 kg · há 3 dias' },
   { key: 'temp', label: 'Temperatura', emoji: '🌡️', status: 'Nada registrado hoje' },
+  { key: 'bath', label: 'Banho', emoji: '🛁', status: 'Registrado às 18:30', done: true },
 ]
 
 export const trackTimeline = [
@@ -208,7 +209,7 @@ export const soundSections = [
 
 // ---------- Atividades C3 (US do escopo) ----------
 export const activities = {
-  title: 'Brincar bem de dia = dormir melhor à noite.',
+  title: 'Brincar bem de dia é dormir melhor à noite.',
   babyLine: 'Atividades para a Olivia · 9 meses',
   groups: [
     { title: 'Para o corpo', subtitle: 'gasto de energia', emoji: '🤸', items: [
@@ -223,7 +224,7 @@ export const activities = {
       'Garrafinhas sensoriais com grãos',
       'Objetos que afundam e flutuam no banho',
     ]},
-    { title: 'Para a mente', subtitle: 'cognição', emoji: '🧠', items: [
+    { title: 'Para a mente', subtitle: 'aprender brincando', emoji: '🧠', items: [
       'Esconder brinquedos parcialmente e incentivar a busca',
       'Músicas com palmas e movimentos',
       'Bater colheres em potes para ouvir sons',
@@ -240,19 +241,20 @@ export const chat = {
   messages: [
     { from: 'bot', text: 'Seja muito bem-vinda, Amanda! Como foi a noite da Olivia?' },
     { from: 'user', text: 'Ela acordou 3x essa madrugada 😞' },
-    { from: 'bot', text: 'Amanda, isso tem explicação — e não é culpa sua. Pelos registros, a Olivia chegou na noite com pressão de sono acumulada demais. Vamos ajustar a soneca 3 em 15 minutinhos? Amanhã me conta como foi. 💛' },
+    { from: 'bot', text: 'Amanda, isso tem explicação — e não é culpa sua. Pelos registros, a Olivia chegou na noite com pressão de sono acumulada demais. Vamos antecipar a soneca da tarde em 15 minutinhos? Amanhã me conta como foi. 💛' },
   ],
   chips: ['Analisar a madrugada', 'Ajustar rotina', 'Ideias de brincadeira', 'Falar do ritual'],
 }
 
 // ---------- Estatísticas ----------
 export const stats = {
-  totalSleep: '12h10',
+  yesterdaySleep: '12h10',
   avgSleep: '13h15',
   week: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
   dates: ['15/2', '16/2', '17/2', '18/2', '19/2', '20/2', '21/2'],
-  sleepCurve: [9.0, 8.4, 8.0, 8.3, 8.9, 9.4, 9.6], // horas hora-de-acordar estilizada
-  bedtime: [22.6, 21.7, 21.2, 22.8, 21.9, 20.3, 20.3], // 20-23h
+  sleepCurve: [13.6, 13.0, 12.2, 12.9, 13.5, 14.0, 14.2], // horas totais de sono/dia
+  bedtime: [22.6, 21.7, 21.2, 22.8, 21.9, 20.3, 20.3], // horário 20-23h
+  bedtimeLabels: ['22:35', '21:40', '21:10', '22:45', '21:55', '20:15', '20:20'],
   nightWakings: [3, 3, 2, 2, 1, 1, 1],
 }
 
@@ -262,7 +264,7 @@ export const paywall = {
     'Rotina personalizada pelo Método GPS',
     'Notificações da zona de aprofundamento',
     'Sons ilimitados para dormir',
-    'Chat com a Denise a qualquer hora',
+    'Chat com a Dra. Denise a qualquer hora',
     'Estatísticas completas do sono',
   ],
   monthly: 'R$ 29,90/mês',

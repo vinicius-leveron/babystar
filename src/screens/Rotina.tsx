@@ -7,14 +7,14 @@ import { routine, persona } from '../data/content'
 export function Rotina() {
   const nav = useNavigate()
   return (
-    <PhoneFrame seed={61} scroll>
+    <PhoneFrame seed={61}>
       <ScreenHeader back title="Rotina da Olivia" />
       <Body scroll>
         <div className="bs-card-gold">
           <p className="mb-1 text-[13px] font-extrabold text-gold">Análise da {persona.babyName} · {persona.babyAgeMonths} meses</p>
           <p className="text-[13.5px] leading-relaxed text-ink2">{routine.analysis}</p>
-          <p className="mt-2 text-[12.5px] text-muted">
-            Cronotipo identificado: <span className="font-bold text-lav">{persona.chronotype}</span>
+          <p className="mt-2 text-[12.5px] text-ink2">
+            Ritmo natural da {persona.babyName}: <span className="font-bold text-gold">equilibrado</span>
           </p>
         </div>
 

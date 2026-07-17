@@ -1,17 +1,38 @@
 import { useNavigate } from 'react-router-dom'
 import { Plus } from 'lucide-react'
 import { PhoneFrame } from '../components/PhoneFrame'
-import { Body, ScreenHeader } from '../components/ui'
+import { Body, ScreenHeader, ProgressBar } from '../components/ui'
 import { sleepLog, persona } from '../data/content'
 
 export function Registro() {
   const nav = useNavigate()
+  const registered = 36 // horas registradas das 48h
   return (
-    <PhoneFrame seed={42} scroll>
-      <ScreenHeader back title="Registro" right={<span className="bs-chip-on">24h / 48h</span>} />
+    <PhoneFrame seed={42}>
+      <ScreenHeader
+        back
+        title="Registro"
+        right={
+          <button
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-grad text-[#251A05] shadow-gold-sm"
+            aria-label="Adicionar evento"
+          >
+            <Plus size={22} strokeWidth={2.6} />
+          </button>
+        }
+      />
       <Body scroll>
-        <p className="px-1 text-[13.5px] text-ink2">
-          Toque em <span className="font-bold text-gold">+</span> para adicionar um evento do dia da {persona.babyName}.
+        {/* progresso 48h */}
+        <div className="bs-card">
+          <div className="mb-2 flex items-center justify-between">
+            <p className="text-[13.5px] font-bold">{registered}h de 48h registradas</p>
+            <span className="text-[12.5px] font-bold text-gold">Dia 2 de 2</span>
+          </div>
+          <ProgressBar pct={(registered / 48) * 100} />
+        </div>
+
+        <p className="px-1 text-[13px] text-ink2">
+          Toque no <span className="font-bold text-gold">+</span> para adicionar um evento do dia da {persona.babyName}.
         </p>
 
         {sleepLog.map((d) => (
@@ -34,13 +55,13 @@ export function Registro() {
           </div>
         ))}
 
-        <button className="flex items-center justify-center gap-2 rounded-2xl border border-dashed border-white/20 bg-white/[0.03] py-3.5 text-[14px] font-bold text-lav">
+        <button className="mb-1 flex items-center justify-center gap-2 rounded-2xl border border-dashed border-white/25 bg-white/[0.03] py-3.5 text-[14px] font-bold text-ink2">
           <Plus size={18} /> Adicionar evento
         </button>
       </Body>
       <div className="px-6 pb-6 pt-1">
         <button className="bs-btn-primary" onClick={() => nav('/analise')}>
-          Concluí as 48h
+          Concluir registro de 48h
         </button>
       </div>
     </PhoneFrame>

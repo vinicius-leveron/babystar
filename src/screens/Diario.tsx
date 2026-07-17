@@ -9,7 +9,7 @@ export function Diario() {
   return (
     <PhoneFrame seed={91}>
       <ScreenHeader title="Diário" right={<span className="bs-chip">Hoje</span>} />
-      <div className="flex flex-1 flex-col overflow-y-auto no-scrollbar px-[22px] pb-3 pt-1">
+      <div className="flex flex-1 flex-col overflow-y-auto no-scrollbar px-[22px] pb-5 pt-1">
         <p className="mb-2.5 bs-label">Registrar</p>
         <div className="grid grid-cols-3 gap-2.5">
           {trackKinds.map((k) => (

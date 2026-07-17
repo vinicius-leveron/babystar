@@ -11,18 +11,24 @@ function seeded(seed: number) {
   }
 }
 
-export function StarField({ count = 46, seed = 7 }: { count?: number; seed?: number }) {
+export function StarField({ count = 32, seed = 7 }: { count?: number; seed?: number }) {
   const stars = useMemo<Star[]>(() => {
     const rnd = seeded(seed)
     const palette = ['rgba(255,255,255,', 'rgba(245,200,107,', 'rgba(169,178,232,']
-    return Array.from({ length: count }, () => ({
-      x: rnd() * 100,
-      y: rnd() * 100,
-      r: 0.6 + rnd() * 1.3,
-      o: 0.3 + rnd() * 0.6,
-      c: palette[Math.floor(rnd() * palette.length)],
-      d: rnd() * 4,
-    }))
+    return Array.from({ length: count }, () => {
+      // zona de exclusão central (onde costuma haver texto): empurra estrelas para as bordas
+      let x = rnd() * 100
+      const y = rnd() * 100
+      if (x > 22 && x < 78) x = x < 50 ? x - 18 : x + 18
+      return {
+        x,
+        y,
+        r: 0.6 + rnd() * 1.2,
+        o: 0.22 + rnd() * 0.5,
+        c: palette[Math.floor(rnd() * palette.length)],
+        d: rnd() * 4,
+      }
+    })
   }, [count, seed])
 
   return (

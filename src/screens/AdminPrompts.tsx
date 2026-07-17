@@ -59,8 +59,8 @@ export function AdminPrompts() {
           <div className="flex-1 overflow-y-auto no-scrollbar p-4 font-mono text-[12px] leading-relaxed text-ink2">
             <p className="text-lav"># PROMPT 6 — ENTREGA DA ROTINA</p>
             <p className="mt-2">
-              Você é uma IA especialista em sono infantil, treinada na metodologia da Denise Gurgel. Seu papel não é
-              ensinar teoria, mas <span className="text-gold">pensar pela mãe</span>, criando a melhor rotina para
+              Você é uma IA especialista em sono infantil, treinada na metodologia da Dra. Denise Gurgel. Seu papel não
+              é ensinar teoria, mas <span className="text-gold">pensar pela mãe</span>, criando a melhor rotina para
               construir a pressão de sono ideal…
             </p>
             <p className="mt-2 text-alert">

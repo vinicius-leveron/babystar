@@ -10,9 +10,9 @@ export function Paywall() {
   const nav = useNavigate()
   const [plan, setPlan] = useState<'year' | 'month'>('year')
   return (
-    <PhoneFrame seed={141} scroll>
+    <PhoneFrame seed={141}>
       <Body scroll>
-        <button onClick={() => nav('/app/home')} className="self-end pt-2 text-[13px] font-bold text-muted">
+        <button onClick={() => nav('/app/home')} className="self-end pt-2 text-[13px] font-bold text-ink2">
           Agora não
         </button>
 
@@ -51,10 +51,10 @@ export function Paywall() {
         <button className="bs-btn-primary" onClick={() => nav('/app/home')}>
           Começar teste grátis
         </button>
-        <div className="mt-2.5 flex items-center justify-center gap-1.5 text-[11.5px] text-muted">
+        <div className="mt-2.5 flex items-center justify-center gap-1.5 text-[12px] text-ink2">
           <ShieldCheck size={13} /> {paywall.guarantee}
         </div>
-        <p className="mt-1 text-center text-[11.5px] text-lav">{paywall.socialProof}</p>
+        <p className="mt-1 text-center text-[12px] font-semibold text-gold">{paywall.socialProof}</p>
       </div>
     </PhoneFrame>
   )
@@ -82,18 +82,18 @@ function PlanRow({
     >
       <div className="flex items-center gap-3">
         <span
-          className={`flex h-5 w-5 items-center justify-center rounded-full border-2 ${
+          className={`flex h-5 w-5 flex-none items-center justify-center rounded-full border-2 ${
             active ? 'border-gold bg-gold' : 'border-white/25'
           }`}
         >
           {active && <span className="h-2 w-2 rounded-full bg-[#251A05]" />}
         </span>
-        <span className="text-[15px] font-extrabold">{title}</span>
+        <div className="flex flex-col items-start">
+          <span className="text-[15px] font-extrabold leading-tight">{title}</span>
+          {tag && <span className="mt-0.5 rounded-full bg-gold/15 px-2 py-0.5 text-[10.5px] font-bold text-gold">{tag}</span>}
+        </div>
       </div>
-      <div className="flex items-center gap-2">
-        {tag && <span className="rounded-full bg-ok/15 px-2 py-0.5 text-[11px] font-bold text-ok">{tag}</span>}
-        <span className="text-[15px] font-extrabold">{price}</span>
-      </div>
+      <span className="flex-none whitespace-nowrap text-[15px] font-extrabold">{price}</span>
     </button>
   )
 }

@@ -73,7 +73,8 @@ body {
   }
 
   .bs-label {
-    @apply text-[13px] font-bold uppercase tracking-[0.6px] text-lav;
+    @apply text-[13px] font-bold uppercase tracking-[0.6px];
+    color: #eabf78; /* dourado suave — assinatura da marca (evita o roxo do concorrente) */
   }
 }
 

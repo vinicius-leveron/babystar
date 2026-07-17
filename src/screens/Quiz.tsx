@@ -19,13 +19,13 @@ export function Quiz() {
   }
 
   return (
-    <PhoneFrame seed={21} scroll>
+    <PhoneFrame seed={21}>
       <ScreenHeader back title="Temperamento" onBack={() => (step === 0 ? nav(-1) : setStep((s) => s - 1))} />
-      <Body>
+      <Body scroll>
         <div className="px-1">
           <ProgressBar pct={((step + 1) / quiz.length) * 100} />
           <p className="mt-2 text-[12.5px] text-muted">
-            Camada 1 · Pergunta {step + 1} de {quiz.length}
+            Etapa 1 · Pergunta {step + 1} de {quiz.length}
           </p>
         </div>
 
@@ -48,12 +48,12 @@ export function Quiz() {
               >
                 <span
                   className={`flex h-[34px] w-[34px] flex-none items-center justify-center rounded-full text-[14.5px] font-extrabold ${
-                    on ? 'bg-gold-grad text-[#251A05]' : 'border border-white/[0.16] bg-white/[0.08] text-lav'
+                    on ? 'bg-gold-grad text-[#251A05]' : 'border border-white/25 bg-white/[0.1] text-ink'
                   }`}
                 >
                   {o.letter}
                 </span>
-                <span className={on ? 'text-ink' : 'text-ink2'}>{o.text}</span>
+                <span className={on ? 'text-ink' : 'text-ink'}>{o.text}</span>
               </button>
             )
           })}

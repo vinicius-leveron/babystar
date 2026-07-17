@@ -40,11 +40,11 @@ export function Analise() {
           </div>
         </div>
 
-        <p className="mt-7 text-[15px] font-bold uppercase tracking-[1px] text-lav">BabyStar está aprendendo</p>
+        <p className="mt-7 text-[15px] font-bold uppercase tracking-[1px] text-gold">BabyStar está aprendendo</p>
         <h1 className="mt-1 text-[52px] font-extrabold leading-none">{pct}%</h1>
-        <p className="mt-4 max-w-[290px] text-[15px] leading-relaxed text-ink2">
-          Estou cruzando o temperamento e as 48h da {persona.babyName} com a fisiologia do sono para encontrar a
-          janela neurológica dela.
+        <p className="mt-4 max-w-[300px] text-[15px] leading-relaxed text-ink2">
+          Estou cruzando o temperamento e as 48h da {persona.babyName} com a pressão de sono ideal dela para encontrar
+          a zona de aprofundamento do sono.
         </p>
       </div>
       <div className="px-6 pb-10">

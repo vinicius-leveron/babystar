@@ -30,9 +30,9 @@ export function Splash() {
           transition={{ delay: 0.7, duration: 0.7 }}
           className="mt-4 text-[17px] leading-relaxed text-ink2"
         >
-          O sono profundo do seu bebê,
+          Ajudamos seu bebê a dormir mais
           <br />
-          guiado por estrela.
+          profundo — guiado pela estrela.
         </motion.p>
       </div>
       <div className="flex flex-col gap-3 px-6 pb-10">

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { Moon, Sun, Cloud, PencilLine, Camera, Keyboard } from 'lucide-react'
+import { Moon, MoonStar, Sun, Cloud, PencilLine, Camera, Keyboard } from 'lucide-react'
 import { PhoneFrame } from '../components/PhoneFrame'
 import { Body, ScreenHeader, ProgressBar } from '../components/ui'
 import { persona } from '../data/content'
@@ -7,12 +7,12 @@ import { persona } from '../data/content'
 export function RegistroIntro() {
   const nav = useNavigate()
   return (
-    <PhoneFrame seed={41} scroll>
+    <PhoneFrame seed={41}>
       <ScreenHeader back />
       <Body scroll>
         <div className="px-1">
           <ProgressBar pct={60} />
-          <p className="mt-2 text-[12.5px] text-muted">Camada 2 · Pressão de sono</p>
+          <p className="mt-2 text-[12.5px] text-muted">Etapa 2 · Pressão de sono</p>
         </div>
 
         <h1 className="mt-1 text-[25px] font-extrabold leading-tight">
@@ -29,7 +29,7 @@ export function RegistroIntro() {
             { icon: Sun, t: 'Despertar da manhã' },
             { icon: Cloud, t: 'Todas as sonecas (início e fim)' },
             { icon: Moon, t: 'Início do sono noturno' },
-            { icon: PencilLine, t: 'Despertares da madrugada' },
+            { icon: MoonStar, t: 'Despertares da madrugada' },
           ].map(({ icon: Icon, t }) => (
             <div key={t} className="flex items-center gap-3">
               <div className="flex h-9 w-9 flex-none items-center justify-center rounded-xl bg-white/[0.06] text-gold">

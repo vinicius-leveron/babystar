@@ -6,14 +6,18 @@ import { screens } from './screens/registry'
 // Cada tela aberta em cheio é centralizada num "palco" escuro,
 // com um atalho flutuante de volta à galeria.
 function Stage({ children }: { children: React.ReactNode }) {
+  // `?bare` esconde a moldura de preview (usado nos screenshots)
+  const bare = new URLSearchParams(window.location.search).has('bare')
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#03040c] p-6">
-      <Link
-        to="/"
-        className="fixed left-5 top-5 z-[100] flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 text-[13px] font-bold text-ink2 backdrop-blur hover:text-gold"
-      >
-        <Grid2x2 size={16} /> Galeria
-      </Link>
+      {!bare && (
+        <Link
+          to="/"
+          className="fixed bottom-5 left-1/2 z-[100] flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/10 bg-white/[0.08] px-4 py-2 text-[13px] font-bold text-ink2 backdrop-blur hover:text-gold"
+        >
+          <Grid2x2 size={16} /> Voltar à galeria
+        </Link>
+      )}
       {children}
     </div>
   )

@@ -59,11 +59,11 @@ export function DayRing({
         {children}
       </div>
 
-      {/* marcadores */}
+      {/* marcadores (só emoji sobre o anel; horários vão numa faixa fora do anel) */}
       {markers.map((m, i) => {
         const { x, y } = toXY(m.angle)
         return (
-          <div key={i} className="absolute" style={{ left: x, top: y, transform: 'translate(-50%,-50%)' }}>
+          <div key={`m${i}`} className="absolute" style={{ left: x, top: y, transform: 'translate(-50%,-50%)' }}>
             <div
               className={`flex h-11 w-11 items-center justify-center rounded-full text-lg ${
                 m.active
@@ -73,7 +73,6 @@ export function DayRing({
             >
               {m.emoji}
             </div>
-            <div className="mt-0.5 text-center text-[11px] font-bold text-muted">{m.time}</div>
           </div>
         )
       })}

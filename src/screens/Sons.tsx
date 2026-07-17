@@ -8,7 +8,7 @@ export function Sons() {
   return (
     <PhoneFrame seed={101}>
       <ScreenHeader title="Sons" />
-      <div className="flex flex-1 flex-col overflow-y-auto no-scrollbar px-[22px] pb-2 pt-1">
+      <div className="flex flex-1 flex-col overflow-y-auto no-scrollbar px-[22px] pb-4 pt-1">
         {soundSections.map((sec) => (
           <div key={sec.section} className="mb-4">
             <p className="mb-2.5 bs-label">{sec.section}</p>

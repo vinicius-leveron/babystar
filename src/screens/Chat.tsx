@@ -6,17 +6,7 @@ import { chat } from '../data/content'
 export function Chat() {
   return (
     <PhoneFrame seed={121}>
-      <ScreenHeader
-        back
-        title="Denise"
-        right={
-          <div className="flex items-center gap-2">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-[#2A2350] to-[#141A38] text-lg">
-              👩🏻‍⚕️
-            </span>
-          </div>
-        }
-      />
+      <ScreenHeader back title="Dra. Denise" />
       <div className="px-5 pb-1">
         <span className="bs-chip-on">IA treinada pela Dra. Denise Gurgel</span>
       </div>
