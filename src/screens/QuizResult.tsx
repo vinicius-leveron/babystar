@@ -44,8 +44,8 @@ export function QuizResult() {
         </div>
       </Body>
       <div className="px-6 pb-6 pt-1">
-        <button className="bs-btn-primary" onClick={() => nav('/registro-intro')}>
-          Continuar
+        <button className="bs-btn-primary" onClick={() => nav('/app/home')}>
+          Aplicar na rotina da {persona.babyName}
         </button>
       </div>
     </PhoneFrame>

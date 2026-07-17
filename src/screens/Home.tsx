@@ -36,15 +36,15 @@ export function Home() {
       <div className="flex flex-1 flex-col overflow-hidden">
         {/* topo */}
         <div className="flex items-center justify-between px-6 pt-1">
-          <div className="flex items-center gap-2.5">
+          <button onClick={() => nav('/app/perfil')} className="flex items-center gap-2.5 text-left">
             <div className="flex h-11 w-11 items-center justify-center rounded-full border border-gold/40 bg-gradient-to-br from-[#2A2350] to-[#141A38] text-xl">
               👶
             </div>
             <div>
               <p className="text-[15px] font-extrabold leading-tight">{persona.babyName}</p>
-              <p className="text-[11.5px] text-muted">{persona.babyAgeMonths} meses · {persona.temperament}</p>
+              <p className="text-[11.5px] text-muted">acordou hoje às {persona.wakeToday}</p>
             </div>
-          </div>
+          </button>
           <button
             onClick={() => nav('/notificacoes')}
             className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.05] text-lg"
@@ -54,11 +54,13 @@ export function Home() {
         </div>
 
         {/* anel do dia */}
-        <div className="mt-1">
-          <DayRing size={280} markers={markers}>
-            <p className="text-[12.5px] font-bold uppercase tracking-[1px] text-gold">Zona de aprofundamento</p>
+        <div className="mt-0">
+          <DayRing size={272} markers={markers}>
+            <p className="text-[12px] font-bold uppercase tracking-[1px] text-gold">Zona de aprofundamento</p>
             <p className="text-[44px] font-extrabold leading-none text-gradient-gold">3 min</p>
-            <p className="mt-1 text-[12.5px] font-semibold text-ink2">Próxima soneca 13:00–13:30</p>
+            <button onClick={() => nav('/rotina')} className="mt-1 text-[12.5px] font-semibold text-ink2 underline decoration-white/20 underline-offset-2">
+              Próxima soneca 13:00 · ver rotina
+            </button>
           </DayRing>
         </div>
 
@@ -82,7 +84,7 @@ export function Home() {
         </div>
 
         {/* atalhos rápidos */}
-        <div className="mt-3 grid grid-cols-4 gap-2.5 px-6">
+        <div className="mt-2.5 grid grid-cols-4 gap-2.5 px-6">
           {quick.map(({ icon: Icon, label }) => (
             <button
               key={label}
@@ -94,6 +96,18 @@ export function Home() {
             </button>
           ))}
         </div>
+
+        {/* personalização opcional — não trava a entrega */}
+        <button
+          onClick={() => nav('/quiz')}
+          className="mx-6 mt-2.5 flex items-center gap-3 rounded-2xl border border-lav/20 bg-lav/[0.06] px-4 py-2.5 text-left"
+        >
+          <span className="text-lg">🧩</span>
+          <p className="flex-1 text-[12.5px] leading-snug text-ink2">
+            Conhecer o temperamento da {persona.babyName} deixa a rotina ainda mais precisa
+          </p>
+          <span className="text-[12px] font-bold text-lav">Fazer</span>
+        </button>
       </div>
       <TabBar active="home" />
     </PhoneFrame>

@@ -5,11 +5,12 @@ import { screens, phases, type Phase } from './registry'
 
 const phaseEmotion: Record<Phase, string> = {
   'A · Chegada': 'Expectativa e insegurança',
-  'B · Temperamento': 'Curiosidade — “meu bebê é único”',
-  'C · Pressão de sono': 'Esforço recompensado — “o app entende meu bebê”',
-  'D · GPS entregue': 'Momento aha — “existe uma causa oculta e agora tenho um guia”',
-  'E · Vida com o app': 'Hábito e fidelização',
-  'F · Admin': 'Operação interna (desktop)',
+  'B · Rotina no minuto 1': 'Valor imediato — a rotina sai da 1ª interação, sem esperar 48h',
+  'C · Acompanhar o dia': 'O app tira a conta da cabeça da mãe',
+  'D · Aprender': 'Conteúdo da Dra. Denise — a mãe destrava com apoio, não sozinha',
+  'E · Personalizar': 'Método GPS — deixa a rotina mais precisa (opcional)',
+  'F · Evolução & conta': 'Hábito, evolução e monetização',
+  'G · Admin': 'Operação interna (desktop)',
 }
 
 export function Gallery() {
@@ -22,7 +23,7 @@ export function Gallery() {
           Jornada e telas do <span className="text-gradient-gold">BabyStar</span>
         </h1>
         <p className="mt-3 max-w-[640px] text-[15px] leading-relaxed text-ink2">
-          App de sono infantil guiado pelo Método GPS da Dra. Denise Gurgel. Protótipo navegável — <b className="font-semibold text-ink">teste o app</b> percorrendo o fluxo completo, ou clique em qualquer tela abaixo para abri-la direto. 17 telas de app + 2 de painel admin, cobrindo as histórias US 2.1 a 2.9.
+          App de sono infantil guiado pelo Método GPS da Dra. Denise Gurgel. Protótipo navegável — <b className="font-semibold text-ink">teste o app</b> percorrendo o fluxo completo, ou clique em qualquer tela abaixo para abri-la direto. 19 telas de app + 2 de painel admin, cobrindo todos os módulos e as histórias US 2.1 a 2.9.
         </p>
         <div className="mt-6 flex flex-wrap items-center gap-3">
           <Link

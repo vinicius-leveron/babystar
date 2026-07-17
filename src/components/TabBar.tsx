@@ -1,13 +1,13 @@
-import { Home, Music, Plus, BarChart3, User } from 'lucide-react'
+import { Home, Music, Plus, BookOpen, BarChart3 } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
-type TabKey = 'home' | 'sons' | 'stats' | 'perfil'
+type TabKey = 'home' | 'sons' | 'aprender' | 'stats' | 'perfil'
 
 const tabs: { key: TabKey; label: string; icon: typeof Home; to: string }[] = [
   { key: 'home', label: 'Início', icon: Home, to: '/app/home' },
   { key: 'sons', label: 'Sons', icon: Music, to: '/app/sons' },
+  { key: 'aprender', label: 'Aprender', icon: BookOpen, to: '/app/conteudo' },
   { key: 'stats', label: 'Evolução', icon: BarChart3, to: '/app/evolucao' },
-  { key: 'perfil', label: 'Perfil', icon: User, to: '/app/perfil' },
 ]
 
 export function TabBar({ active }: { active: TabKey }) {

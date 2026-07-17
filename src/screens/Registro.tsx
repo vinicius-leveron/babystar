@@ -1,17 +1,17 @@
 import { useNavigate } from 'react-router-dom'
-import { Plus } from 'lucide-react'
+import { Plus, TrendingUp } from 'lucide-react'
 import { PhoneFrame } from '../components/PhoneFrame'
-import { Body, ScreenHeader, ProgressBar } from '../components/ui'
+import { Body, ScreenHeader } from '../components/ui'
 import { sleepLog, persona } from '../data/content'
 
+// "Meus dias": histórico do dia a dia que CALIBRA a rotina — sem gate de 48h.
 export function Registro() {
   const nav = useNavigate()
-  const registered = 36 // horas registradas das 48h
   return (
     <PhoneFrame seed={42}>
       <ScreenHeader
         back
-        title="Registro"
+        title="Meus dias"
         right={
           <button
             className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-grad text-[#251A05] shadow-gold-sm"
@@ -22,23 +22,19 @@ export function Registro() {
         }
       />
       <Body scroll>
-        {/* progresso 48h */}
-        <div className="bs-card">
-          <div className="mb-2 flex items-center justify-between">
-            <p className="text-[13.5px] font-bold">{registered}h de 48h registradas</p>
-            <span className="text-[12.5px] font-bold text-gold">Dia 2 de 2</span>
-          </div>
-          <ProgressBar pct={(registered / 48) * 100} />
+        {/* calibração — melhora a cada dia, sem espera */}
+        <div className="bs-card-gold flex items-center gap-3">
+          <TrendingUp size={22} className="flex-none text-gold" />
+          <p className="text-[13px] leading-snug text-ink2">
+            Cada dia que você registra deixa a rotina da {persona.babyName} mais precisa. Você já recebe a rotina desde
+            o primeiro dia — isto aqui só afina.
+          </p>
         </div>
 
-        <p className="px-1 text-[13px] text-ink2">
-          Toque no <span className="font-bold text-gold">+</span> para adicionar um evento do dia da {persona.babyName}.
-        </p>
-
-        {sleepLog.map((d) => (
+        {sleepLog.map((d, di) => (
           <div key={d.day} className="bs-card">
             <div className="mb-2 flex items-center justify-between">
-              <p className="text-[14px] font-extrabold">{d.day}</p>
+              <p className="text-[14px] font-extrabold">{di === 0 ? 'Hoje' : 'Ontem'}</p>
               <span className="text-[12px] text-muted">{d.items.length} eventos</span>
             </div>
             <div className="relative flex flex-col gap-0">
@@ -60,8 +56,8 @@ export function Registro() {
         </button>
       </Body>
       <div className="px-6 pb-6 pt-1">
-        <button className="bs-btn-primary" onClick={() => nav('/analise')}>
-          Concluir registro de 48h
+        <button className="bs-btn-primary" onClick={() => nav('/app/home')}>
+          Voltar para o dia da {persona.babyName}
         </button>
       </div>
     </PhoneFrame>

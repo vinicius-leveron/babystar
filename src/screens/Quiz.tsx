@@ -25,7 +25,7 @@ export function Quiz() {
         <div className="px-1">
           <ProgressBar pct={((step + 1) / quiz.length) * 100} />
           <p className="mt-2 text-[12.5px] text-muted">
-            Etapa 1 · Pergunta {step + 1} de {quiz.length}
+            Personalizar · Pergunta {step + 1} de {quiz.length}
           </p>
         </div>
 

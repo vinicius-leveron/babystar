@@ -62,7 +62,7 @@ export function Timer() {
           </div>
         </div>
         <p className="pb-4 text-center text-[12.5px] text-muted">
-          Ao encerrar, a soneca é salva no diário e a pressão de sono é atualizada.
+          Ao encerrar, eu salvo a soneca e <span className="font-semibold text-ink2">recalculo os horários das próximas</span> — você não precisa fazer conta.
         </p>
       </Body>
     </PhoneFrame>

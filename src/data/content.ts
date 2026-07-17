@@ -8,6 +8,8 @@ export const persona = {
   motherName: 'Amanda',
   babyName: 'Olivia',
   babyAgeMonths: 9,
+  sex: 'menina' as 'menina' | 'menino',
+  wakeToday: '7:00',
   chronotype: 'Intermediário',
   temperament: 'Anjo',
   learningPct: 75,
@@ -126,7 +128,7 @@ export const sleepLog = [
 // ---------- Rotina personalizada (US 2.2) ----------
 export const routine = {
   analysis:
-    'Pelos registros desses dois dias, percebo que a Olivia está acumulando pressão de sono excessiva no final da tarde, o que faz com que ela chegue muito cansada ao início da noite. Quando isso acontece, o corpo entra em estado de alerta em vez de descanso profundo — o que explica os despertares noturnos e o sono fragmentado.',
+    'Montei o dia da Olivia a partir da idade dela (9 meses) e do horário que ela acordou hoje (7:00). Esses são os melhores momentos para ela dormir sem acumular pressão de sono demais. Conforme vocês forem usando, eu vou afinando os horários para o ritmo real dela — sem você precisar ficar fazendo conta.',
   steps: [
     { icon: '☀️', title: 'Despertar da manhã', time: 'entre 6:30 e 7:00', note: '' },
     { icon: '☁️', title: 'Soneca 1', time: 'entre 9:00 e 9:30', note: 'duração média 1h a 1h30' },
@@ -146,11 +148,11 @@ export const routine = {
 
 // ---------- Notificações proativas (US 2.4) ----------
 export const notifications = [
-  { emoji: '🌟', title: 'Entrando na zona de aprofundamento', body: 'O cérebro da Olivia está pronto para o sono profundo. Comece o ritual agora.', when: 'agora' },
-  { emoji: '⭐', title: 'Prepare o ritual', body: 'Em 15 minutos a Olivia entra na zona de aprofundamento do sono.', when: '15 min' },
+  { emoji: '⭐', title: 'Prepare o ritual', body: 'Falta meia hora para a soneca da Olivia (13:00). Comece a diminuir os estímulos.', when: '30 min' },
+  { emoji: '🌟', title: 'Está na hora da Olivia dormir', body: 'A soneca começou? Toque para iniciar o timer — ou fique tranquila se ela ainda não deitou.', when: 'agora' },
+  { emoji: '🍼', title: 'Cadê a Olivia?', body: 'Faz 2h que não tenho novidades. A Olivia dormiu? Me conta pra eu ajustar o resto do dia.', when: '2h' },
   { emoji: '🌙', title: 'Zona de aprofundamento perdida', body: 'Sem culpa, Amanda. Já recalculei: a próxima zona da Olivia é às 15:40. Se precisar, use o sono em movimento.', when: '13:52' },
   { emoji: '🧸', title: 'Dica de hoje', body: 'Túnel de caixas para a Olivia atravessar engatinhando — gasta energia e constrói a pressão de sono da noite.', when: '10:00' },
-  { emoji: '📈', title: 'Rotina pronta!', body: '48h completas! A rotina personalizada da Olivia está pronta.', when: 'ontem' },
 ]
 
 // ---------- Diário (US 2.7) ----------
@@ -272,6 +274,63 @@ export const paywall = {
   yearlySave: 'economize 47%',
   guarantee: 'Cancele quando quiser. Sem cobrança nos 7 primeiros dias.',
   socialProof: 'Método aplicado por mais de 11 mil mães',
+}
+
+// ---------- Conteúdo / Aprender (módulo educacional) ----------
+export type ContentItem = {
+  title: string
+  kind: 'texto' | 'vídeo'
+  time: string
+  premium?: boolean
+}
+export const contentHub: { section: string; items: ContentItem[] }[] = [
+  {
+    section: 'Comece por aqui',
+    items: [
+      { title: 'O que é pressão de sono', kind: 'vídeo', time: '4 min' },
+      { title: 'Como o BabyStar monta a rotina', kind: 'texto', time: '3 min' },
+      { title: 'A zona de aprofundamento na prática', kind: 'texto', time: '5 min' },
+    ],
+  },
+  {
+    section: 'Sono do bebê',
+    items: [
+      { title: 'Por que o bebê acorda à noite', kind: 'texto', time: '6 min' },
+      { title: 'Diminuindo os despertares noturnos', kind: 'vídeo', time: '9 min', premium: true },
+      { title: 'Sono em movimento: o cochilo-ponte', kind: 'texto', time: '4 min' },
+    ],
+  },
+  {
+    section: 'Rotina & desenvolvimento',
+    items: [
+      { title: 'Rotina pelo cronotipo do bebê', kind: 'texto', time: '7 min' },
+      { title: 'Saltos de desenvolvimento e o sono', kind: 'texto', time: '5 min', premium: true },
+      { title: 'Regressões: o que fazer', kind: 'vídeo', time: '8 min', premium: true },
+    ],
+  },
+  {
+    section: 'Rituais',
+    items: [
+      { title: 'Montando o ritual da noite', kind: 'vídeo', time: '6 min' },
+      { title: 'Desacelerar antes de dormir', kind: 'texto', time: '4 min' },
+    ],
+  },
+]
+
+export const article = {
+  category: 'Sono do bebê',
+  kind: 'texto' as const,
+  time: '6 min de leitura',
+  title: 'Por que o bebê acorda à noite',
+  author: 'Dra. Denise Gurgel',
+  lead: 'A novidade é que acordar à noite é normal — e tem explicação. Entender o porquê tira o peso das suas costas.',
+  paragraphs: [
+    'Todo bebê passa por ciclos de sono. Entre um ciclo e outro, ele desperta brevemente — isso é fisiológico e acontece com todos nós, adultos inclusive. A diferença é que o bebê ainda está aprendendo a emendar esses ciclos sozinho.',
+    'Quando a Olivia chega à noite com pressão de sono acumulada demais, o corpo dela entra em estado de alerta em vez de descanso profundo. O resultado é o que você sente na pele: despertares mais frequentes e sono picado.',
+    'Por isso a rotina do dia importa tanto. Sonecas nos horários certos evitam o excesso de cansaço no fim da tarde e ajudam o cérebro a aprofundar o sono à noite — a tal zona de aprofundamento.',
+  ],
+  tip: 'Se a Olivia acordar de madrugada, espere alguns segundos antes de intervir: muitas vezes ela volta a dormir sozinha entre um ciclo e outro.',
+  nextUp: 'Diminuindo os despertares noturnos',
 }
 
 // ---------- Admin ----------
