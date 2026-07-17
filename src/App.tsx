@@ -1,6 +1,7 @@
 import { HashRouter, Routes, Route, Link } from 'react-router-dom'
 import { Grid2x2 } from 'lucide-react'
 import { Gallery } from './screens/Gallery'
+import { Perfil } from './screens/Perfil'
 import { screens } from './screens/registry'
 
 // Cada tela aberta em cheio é centralizada num "palco" escuro,
@@ -28,6 +29,15 @@ export default function App() {
     <HashRouter>
       <Routes>
         <Route path="/" element={<Gallery />} />
+        {/* Perfil não entra na galeria de aprovação, mas mantém a aba viva no fluxo */}
+        <Route
+          path="/app/perfil"
+          element={
+            <Stage>
+              <Perfil />
+            </Stage>
+          }
+        />
         {screens.map((s) => (
           <Route
             key={s.path}

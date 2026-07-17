@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Play } from 'lucide-react'
 import { Wordmark } from '../components/StarLogo'
 import { screens, phases, type Phase } from './registry'
 
@@ -22,9 +22,17 @@ export function Gallery() {
           Jornada e telas do <span className="text-gradient-gold">BabyStar</span>
         </h1>
         <p className="mt-3 max-w-[640px] text-[15px] leading-relaxed text-ink2">
-          App de sono infantil guiado pelo Método GPS da Dra. Denise Gurgel. Protótipo navegável — clique em qualquer
-          tela para abri-la em tela cheia. 17 telas de app + 2 de painel admin, cobrindo as histórias US 2.1 a 2.9.
+          App de sono infantil guiado pelo Método GPS da Dra. Denise Gurgel. Protótipo navegável — <b className="font-semibold text-ink">teste o app</b> percorrendo o fluxo completo, ou clique em qualquer tela abaixo para abri-la direto. 17 telas de app + 2 de painel admin, cobrindo as histórias US 2.1 a 2.9.
         </p>
+        <div className="mt-6 flex flex-wrap items-center gap-3">
+          <Link
+            to="/splash"
+            className="flex items-center gap-2 rounded-full bg-gold-grad px-6 py-3 text-[15px] font-extrabold text-[#251A05] shadow-gold transition hover:brightness-105"
+          >
+            <Play size={17} fill="currentColor" /> Testar app
+          </Link>
+          <span className="text-[13px] text-muted">começa na tela de boas-vindas e avança tela a tela</span>
+        </div>
         <div className="mt-5 flex flex-wrap gap-2">
           {['Método GPS', 'Pressão de sono', 'Zona de aprofundamento', 'IA da Denise'].map((t) => (
             <span key={t} className="bs-chip">{t}</span>
