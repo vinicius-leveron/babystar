@@ -1,0 +1,12 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+.vite
+
+# ferramentas de protótipo (saídas geradas)
+prototype/shots
+prototype/art
+prototype/aprovacao.html
+*.log
