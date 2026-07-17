@@ -1,12 +1,16 @@
-import { useNavigate } from 'react-router-dom'
-import { Plus, TrendingUp } from 'lucide-react'
+import { useState } from 'react'
+import { Plus, ChevronLeft, ChevronRight } from 'lucide-react'
 import { PhoneFrame } from '../components/PhoneFrame'
-import { Body, ScreenHeader } from '../components/ui'
-import { sleepLog, persona } from '../data/content'
+import { ScreenHeader } from '../components/ui'
+import { trackTimeline, persona } from '../data/content'
 
-// "Meus dias": histórico do dia a dia que CALIBRA a rotina — sem gate de 48h.
+// "Meus dias": calendário do mês — escolha um dia e veja o que foi registrado.
+const weekdays = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S']
+const daysInMonth = 28 // Fevereiro 2026 (começa no domingo)
+const withRecords = new Set([9, 10, 11, 12, 13, 15, 16, 17])
+
 export function Registro() {
-  const nav = useNavigate()
+  const [selected, setSelected] = useState(17)
   return (
     <PhoneFrame seed={42}>
       <ScreenHeader
@@ -21,44 +25,81 @@ export function Registro() {
           </button>
         }
       />
-      <Body scroll>
-        {/* calibração — melhora a cada dia, sem espera */}
-        <div className="bs-card-gold flex items-center gap-3">
-          <TrendingUp size={22} className="flex-none text-gold" />
-          <p className="text-[13px] leading-snug text-ink2">
-            Cada dia que você registra deixa a rotina da {persona.babyName} mais precisa. Você já recebe a rotina desde
-            o primeiro dia — isto aqui só afina.
-          </p>
+      <div className="flex flex-1 flex-col overflow-y-auto no-scrollbar px-[22px] pb-5 pt-1">
+        {/* calendário */}
+        <div className="bs-card">
+          <div className="mb-3 flex items-center justify-between">
+            <button className="flex h-8 w-8 items-center justify-center rounded-full bg-white/[0.06] text-ink2">
+              <ChevronLeft size={18} />
+            </button>
+            <p className="text-[15px] font-extrabold">Fevereiro 2026</p>
+            <button className="flex h-8 w-8 items-center justify-center rounded-full bg-white/[0.06] text-ink2">
+              <ChevronRight size={18} />
+            </button>
+          </div>
+
+          <div className="mb-1 grid grid-cols-7 gap-1">
+            {weekdays.map((w, i) => (
+              <span key={i} className="text-center text-[11px] font-bold text-muted">
+                {w}
+              </span>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-7 gap-1">
+            {Array.from({ length: daysInMonth }, (_, i) => i + 1).map((d) => {
+              const on = selected === d
+              const has = withRecords.has(d)
+              return (
+                <button
+                  key={d}
+                  onClick={() => setSelected(d)}
+                  className={`relative flex aspect-square items-center justify-center rounded-xl text-[13.5px] font-bold ${
+                    on ? 'bg-gold-grad text-[#251A05]' : has ? 'bg-white/[0.06] text-ink' : 'text-ink2'
+                  }`}
+                >
+                  {d}
+                  {has && !on && (
+                    <span className="absolute bottom-1 h-1 w-1 rounded-full bg-gold" />
+                  )}
+                </button>
+              )
+            })}
+          </div>
         </div>
 
-        {sleepLog.map((d, di) => (
-          <div key={d.day} className="bs-card">
-            <div className="mb-2 flex items-center justify-between">
-              <p className="text-[14px] font-extrabold">{di === 0 ? 'Hoje' : 'Ontem'}</p>
-              <span className="text-[12px] text-muted">{d.items.length} eventos</span>
-            </div>
-            <div className="relative flex flex-col gap-0">
-              {d.items.map((it, i) => (
-                <div key={i} className="flex items-center gap-3 py-2">
-                  <div className="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-white/[0.06] text-base">
-                    {it.icon}
+        {/* dia selecionado */}
+        <div className="mb-1 mt-4 flex items-baseline justify-between">
+          <p className="text-[15px] font-extrabold">
+            {selected === 17 ? 'Terça, 17 de fevereiro' : `${selected} de fevereiro`}
+          </p>
+          <span className="text-[12px] text-muted">{withRecords.has(selected) ? `${trackTimeline.length} eventos` : 'sem registros'}</span>
+        </div>
+
+        {withRecords.has(selected) ? (
+          <div className="relative pl-1">
+            <div className="absolute bottom-2 left-[18px] top-2 w-px bg-white/10" />
+            <div className="flex flex-col gap-1">
+              {trackTimeline.map((t, i) => (
+                <div key={i} className="relative flex items-center gap-3 py-1.5">
+                  <div className="z-10 flex h-9 w-9 flex-none items-center justify-center rounded-full border border-white/[0.16] bg-bg-2 text-base">
+                    {t.emoji}
                   </div>
-                  <span className="flex-1 text-[14px] text-ink2">{it.label}</span>
-                  <span className="text-[13px] font-bold text-ink">{it.time}</span>
+                  <div className="flex-1">
+                    <p className="text-[13.5px] font-bold leading-tight">{t.label}</p>
+                    <p className="text-[12px] text-muted">{t.detail}</p>
+                  </div>
+                  <span className="text-[13px] font-bold text-ink2">{t.time}</span>
                 </div>
               ))}
             </div>
           </div>
-        ))}
-
-        <button className="mb-1 flex items-center justify-center gap-2 rounded-2xl border border-dashed border-white/25 bg-white/[0.03] py-3.5 text-[14px] font-bold text-ink2">
-          <Plus size={18} /> Adicionar evento
-        </button>
-      </Body>
-      <div className="px-6 pb-6 pt-1">
-        <button className="bs-btn-primary" onClick={() => nav('/app/home')}>
-          Voltar para o dia da {persona.babyName}
-        </button>
+        ) : (
+          <div className="rounded-2xl border border-dashed border-white/15 bg-white/[0.02] px-4 py-8 text-center">
+            <p className="text-[13px] text-muted">Nada registrado neste dia.</p>
+            <p className="mt-1 text-[12px] text-muted">Toque no + para adicionar um evento da {persona.babyName}.</p>
+          </div>
+        )}
       </div>
     </PhoneFrame>
   )

@@ -31,26 +31,27 @@ const screens = [
   { n: 10, f: '10-meusdias.jpg', phase: 'C', title: 'Meus dias', cap: 'O dia a dia calibra a rotina — sem gate de 48h.' },
 
   { n: 11, f: '11-conteudo.jpg', phase: 'D', title: 'Aprender · hub', cap: 'Aulas e artigos da Dra. Denise (texto + vídeo).' },
-  { n: 12, f: '12-artigo.jpg', phase: 'D', title: 'Aula / artigo', cap: 'Leitor com vídeo, dica e “a seguir”.' },
+  { n: 12, f: '12-video.jpg', phase: 'D', title: 'Aula em vídeo', cap: 'Player com controles, progresso e trilha de aulas.' },
+  { n: 13, f: '13-artigo.jpg', phase: 'D', title: 'Aula / artigo', cap: 'Leitor de conteúdo com dica e “a seguir”.' },
 
-  { n: 13, f: '13-quiz.jpg', phase: 'E', title: 'Temperamento (opcional)', cap: 'Camada 1 do GPS — deixa a rotina mais precisa.' },
-  { n: 14, f: '14-resultado.jpg', phase: 'E', title: 'Resultado do temperamento', cap: 'O perfil do bebê e o que muda no sono.' },
-  { n: 15, f: '15-atividades.jpg', phase: 'E', title: 'Atividades do dia', cap: 'Camada 3 · gasto de energia por idade.' },
+  { n: 14, f: '14-quiz.jpg', phase: 'E', title: 'Temperamento (opcional)', cap: 'Camada 1 do GPS — deixa a rotina mais precisa.' },
+  { n: 15, f: '15-resultado.jpg', phase: 'E', title: 'Resultado do temperamento', cap: 'O perfil do bebê e o que muda no sono.' },
+  { n: 16, f: '16-atividades.jpg', phase: 'E', title: 'Atividades do dia', cap: 'Camada 3 · gasto de energia por idade.' },
 
-  { n: 16, f: '16-evolucao.jpg', phase: 'F', title: 'Estatísticas', cap: 'Sono total, hora de dormir, despertares.' },
-  { n: 17, f: '17-chat.jpg', phase: 'F', title: 'Chat com a Dra. Denise', us: 'US 2.1', cap: 'IA treinada pela especialista.' },
-  { n: 18, f: '18-perfil.jpg', phase: 'F', title: 'Perfil', cap: 'Bebê, rotina, notificações, assinatura.' },
-  { n: 19, f: '19-paywall.jpg', phase: 'F', title: 'Paywall', cap: '7 dias grátis, planos em R$, garantia.' },
+  { n: 17, f: '17-evolucao.jpg', phase: 'F', title: 'Estatísticas', cap: 'Sono total, hora de dormir, despertares.' },
+  { n: 18, f: '18-chat.jpg', phase: 'F', title: 'Chat com a Dra. Denise', us: 'US 2.1', cap: 'IA treinada pela especialista.' },
+  { n: 19, f: '19-perfil.jpg', phase: 'F', title: 'Perfil', cap: 'Bebê, rotina, notificações, assinatura.' },
+  { n: 20, f: '20-paywall.jpg', phase: 'F', title: 'Paywall', cap: '7 dias grátis, planos em R$, garantia.' },
 
-  { n: 20, f: '20-admin-prompts.jpg', phase: 'G', title: 'Editor de prompts', us: 'US 2.8', cap: 'CRUD dos prompts das camadas GPS.', wide: true },
-  { n: 21, f: '21-admin-usuarias.jpg', phase: 'G', title: 'Usuárias', us: 'US 2.9', cap: 'Listagem e busca de usuárias.', wide: true },
+  { n: 21, f: '21-admin-prompts.jpg', phase: 'G', title: 'Editor de prompts', cap: 'CRUD dos prompts das camadas GPS.', wide: true },
+  { n: 22, f: '22-admin-aulas.jpg', phase: 'G', title: 'Aulas & conteúdo', cap: 'Inserir e gerir aulas em vídeo e artigos.', wide: true },
+  { n: 23, f: '23-admin-usuarias.jpg', phase: 'G', title: 'Usuárias', cap: 'Listagem e busca de usuárias.', wide: true },
 ]
 
 const card = (s) => `
   <a class="card ${s.wide ? 'wide' : ''}" href="${b64(s.f)}" target="_blank" rel="noopener">
     <div class="shot ${s.wide ? 'shot-wide' : ''}">
       <img loading="lazy" src="${b64(s.f)}" alt="${s.title}">
-      ${s.us ? `<span class="us">${s.us}</span>` : ''}
     </div>
     <div class="meta">
       <p class="ct"><span class="num">${String(s.n).padStart(2, '0')}</span>${s.title}</p>
@@ -90,12 +91,12 @@ const html = `<div class="wrap">
       <span class="tag">Protótipo · v2</span>
     </div>
     <h1>Jornada &amp; telas para aprovação</h1>
-    <p class="lede">App de sono infantil guiado pelo <b>Método GPS</b> da Dra. Denise Gurgel — identidade própria: céu noturno e uma <b>estrela-guia dourada</b>. Modelo <b>valor no minuto 1</b>: a mãe informa o horário que o bebê acordou e recebe a rotina do dia na hora — sem esperar 48h. São <b>19 telas de app + 2 de painel admin</b>, cobrindo todos os módulos e as histórias US&nbsp;2.1–2.9. Clique em qualquer tela para vê-la em tamanho cheio.</p>
+    <p class="lede">App de sono infantil guiado pelo <b>Método GPS</b> da Dra. Denise Gurgel — identidade própria: céu noturno e uma <b>estrela-guia dourada</b>. Modelo <b>valor no minuto 1</b>: a mãe informa o horário que o bebê acordou e recebe a rotina do dia na hora — sem esperar 48h. São <b>20 telas de app + 3 de painel admin</b>, cobrindo todos os módulos do produto. Clique em qualquer tela para vê-la em tamanho cheio.</p>
     <div class="facts">
-      <div><b>21</b><span>telas desenhadas</span></div>
+      <div><b>23</b><span>telas desenhadas</span></div>
       <div><b>Minuto 1</b><span>rotina sem espera de 48h</span></div>
       <div><b>+ Aprender</b><span>módulo de conteúdo da Denise</span></div>
-      <div><b>US 2.1–2.9</b><span>todas cobertas</span></div>
+      <div><b>Admin</b><span>prompts · aulas · usuárias</span></div>
     </div>
   </header>
 

@@ -317,6 +317,23 @@ export const contentHub: { section: string; items: ContentItem[] }[] = [
   },
 ]
 
+export const videoLesson = {
+  category: 'Comece por aqui',
+  time: '4 min',
+  title: 'O que é pressão de sono',
+  author: 'Dra. Denise Gurgel',
+  current: '1:24',
+  duration: '4:00',
+  progressPct: 35,
+  description:
+    'Neste vídeo eu explico, de mãe pra mãe, o que é a pressão de sono: aquela “energia de sono” que vai se acumulando enquanto o bebê fica acordado. Entender isso é o que faz a rotina do BabyStar funcionar.',
+  chapters: [
+    { title: 'O que é pressão de sono', time: '4 min', playing: true },
+    { title: 'Como a idade muda tudo', time: '3 min' },
+    { title: 'Zona de aprofundamento', time: '5 min', premium: true },
+  ],
+}
+
 export const article = {
   category: 'Sono do bebê',
   kind: 'texto' as const,
@@ -332,6 +349,17 @@ export const article = {
   tip: 'Se a Olivia acordar de madrugada, espere alguns segundos antes de intervir: muitas vezes ela volta a dormir sozinha entre um ciclo e outro.',
   nextUp: 'Diminuindo os despertares noturnos',
 }
+
+// ---------- Admin · Aulas / Conteúdo ----------
+export const adminAulas = [
+  { title: 'O que é pressão de sono', trilha: 'Comece por aqui', tipo: 'Vídeo', status: 'Publicado', premium: false, updated: 'há 2 dias' },
+  { title: 'Como o BabyStar monta a rotina', trilha: 'Comece por aqui', tipo: 'Texto', status: 'Publicado', premium: false, updated: 'há 2 dias' },
+  { title: 'Por que o bebê acorda à noite', trilha: 'Sono do bebê', tipo: 'Texto', status: 'Publicado', premium: false, updated: 'há 5 dias' },
+  { title: 'Diminuindo os despertares noturnos', trilha: 'Sono do bebê', tipo: 'Vídeo', status: 'Publicado', premium: true, updated: 'ontem' },
+  { title: 'Rotina pelo cronotipo do bebê', trilha: 'Rotina & desenvolvimento', tipo: 'Texto', status: 'Rascunho', premium: false, updated: 'há 1 hora' },
+  { title: 'Regressões: o que fazer', trilha: 'Rotina & desenvolvimento', tipo: 'Vídeo', status: 'Rascunho', premium: true, updated: 'há 3 dias' },
+  { title: 'Montando o ritual da noite', trilha: 'Rituais', tipo: 'Vídeo', status: 'Publicado', premium: false, updated: 'há 1 semana' },
+]
 
 // ---------- Admin ----------
 export const adminPrompts = [

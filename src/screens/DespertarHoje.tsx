@@ -31,8 +31,8 @@ export function DespertarHoje() {
             acordou hoje?
           </h1>
           <p className="mt-2 max-w-[290px] text-[13.5px] leading-relaxed text-ink2">
-            Só isso. Com a idade da {persona.babyName} ({persona.babyAgeMonths} meses), eu já monto a rotina do dia
-            inteiro — sem espera.
+            A partir da idade da {persona.babyName} ({persona.babyAgeMonths} meses), o BabyStar monta a rotina do dia
+            inteiro na hora — sem esperar 48h.
           </p>
 
           {/* horário selecionado */}

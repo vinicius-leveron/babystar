@@ -10,6 +10,7 @@ import { Diario } from './Diario'
 import { Sons } from './Sons'
 import { Registro } from './Registro'
 import { Conteudo } from './Conteudo'
+import { ConteudoVideo } from './ConteudoVideo'
 import { ConteudoArtigo } from './ConteudoArtigo'
 import { Quiz } from './Quiz'
 import { QuizResult } from './QuizResult'
@@ -19,6 +20,7 @@ import { Chat } from './Chat'
 import { Perfil } from './Perfil'
 import { Paywall } from './Paywall'
 import { AdminPrompts } from './AdminPrompts'
+import { AdminAulas } from './AdminAulas'
 import { AdminUsuarias } from './AdminUsuarias'
 
 export type Phase =
@@ -56,19 +58,21 @@ export const screens: ScreenMeta[] = [
   { n: 10, path: '/registro', title: 'Meus dias', caption: 'O dia a dia calibra a rotina — sem gate de 48h.', phase: 'C · Acompanhar o dia', kind: 'mobile', Component: Registro },
 
   { n: 11, path: '/app/conteudo', title: 'Aprender · hub', caption: 'Aulas e artigos da Dra. Denise (texto + vídeo).', phase: 'D · Aprender', kind: 'mobile', Component: Conteudo },
-  { n: 12, path: '/conteudo/artigo', title: 'Aula / artigo', caption: 'Leitor de conteúdo com vídeo, dica e “a seguir”.', phase: 'D · Aprender', kind: 'mobile', Component: ConteudoArtigo },
+  { n: 12, path: '/conteudo/video', title: 'Aula em vídeo', caption: 'Player com controles, progresso e trilha de aulas.', phase: 'D · Aprender', kind: 'mobile', Component: ConteudoVideo },
+  { n: 13, path: '/conteudo/artigo', title: 'Aula / artigo', caption: 'Leitor de conteúdo com vídeo, dica e “a seguir”.', phase: 'D · Aprender', kind: 'mobile', Component: ConteudoArtigo },
 
-  { n: 13, path: '/quiz', title: 'Temperamento (opcional)', caption: 'Camada 1 do GPS — deixa a rotina mais precisa.', phase: 'E · Personalizar', kind: 'mobile', Component: Quiz },
-  { n: 14, path: '/resultado', title: 'Resultado do temperamento', caption: 'O perfil do bebê e o que muda no sono.', phase: 'E · Personalizar', kind: 'mobile', Component: QuizResult },
-  { n: 15, path: '/atividades', title: 'Atividades do dia', caption: 'Camada 3 · gasto de energia por idade.', phase: 'E · Personalizar', kind: 'mobile', Component: Atividades },
+  { n: 14, path: '/quiz', title: 'Temperamento (opcional)', caption: 'Camada 1 do GPS — deixa a rotina mais precisa.', phase: 'E · Personalizar', kind: 'mobile', Component: Quiz },
+  { n: 15, path: '/resultado', title: 'Resultado do temperamento', caption: 'O perfil do bebê e o que muda no sono.', phase: 'E · Personalizar', kind: 'mobile', Component: QuizResult },
+  { n: 16, path: '/atividades', title: 'Atividades do dia', caption: 'Camada 3 · gasto de energia por idade.', phase: 'E · Personalizar', kind: 'mobile', Component: Atividades },
 
-  { n: 16, path: '/app/evolucao', title: 'Estatísticas', caption: 'Sono total, hora de dormir, despertares.', phase: 'F · Evolução & conta', kind: 'mobile', Component: Estatisticas },
-  { n: 17, path: '/chat', title: 'Chat com a Dra. Denise', caption: 'IA treinada pela especialista.', phase: 'F · Evolução & conta', us: 'US 2.1', kind: 'mobile', Component: Chat },
-  { n: 18, path: '/app/perfil', title: 'Perfil', caption: 'Bebê, rotina, notificações, assinatura.', phase: 'F · Evolução & conta', kind: 'mobile', Component: Perfil },
-  { n: 19, path: '/paywall', title: 'Paywall', caption: '7 dias grátis, planos em R$, garantia.', phase: 'F · Evolução & conta', kind: 'mobile', Component: Paywall },
+  { n: 17, path: '/app/evolucao', title: 'Estatísticas', caption: 'Sono total, hora de dormir, despertares.', phase: 'F · Evolução & conta', kind: 'mobile', Component: Estatisticas },
+  { n: 18, path: '/chat', title: 'Chat com a Dra. Denise', caption: 'IA treinada pela especialista.', phase: 'F · Evolução & conta', us: 'US 2.1', kind: 'mobile', Component: Chat },
+  { n: 19, path: '/app/perfil', title: 'Perfil', caption: 'Bebê, rotina, notificações, assinatura.', phase: 'F · Evolução & conta', kind: 'mobile', Component: Perfil },
+  { n: 20, path: '/paywall', title: 'Paywall', caption: '7 dias grátis, planos em R$, garantia.', phase: 'F · Evolução & conta', kind: 'mobile', Component: Paywall },
 
-  { n: 20, path: '/admin/prompts', title: 'Admin · Editor de prompts', caption: 'CRUD dos prompts das camadas GPS.', phase: 'G · Admin', us: 'US 2.8', kind: 'admin', Component: AdminPrompts },
-  { n: 21, path: '/admin/usuarias', title: 'Admin · Usuárias', caption: 'Listagem e busca de usuárias.', phase: 'G · Admin', us: 'US 2.9', kind: 'admin', Component: AdminUsuarias },
+  { n: 21, path: '/admin/prompts', title: 'Admin · Editor de prompts', caption: 'CRUD dos prompts das camadas GPS.', phase: 'G · Admin', us: 'US 2.8', kind: 'admin', Component: AdminPrompts },
+  { n: 22, path: '/admin/aulas', title: 'Admin · Aulas & conteúdo', caption: 'Inserir e gerir aulas em vídeo e artigos.', phase: 'G · Admin', kind: 'admin', Component: AdminAulas },
+  { n: 23, path: '/admin/usuarias', title: 'Admin · Usuárias', caption: 'Listagem e busca de usuárias.', phase: 'G · Admin', us: 'US 2.9', kind: 'admin', Component: AdminUsuarias },
 ]
 
 export const phases: Phase[] = [

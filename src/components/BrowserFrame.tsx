@@ -1,9 +1,10 @@
 import type { ReactNode } from 'react'
-import { Star, FileText, Users, LayoutDashboard, Settings } from 'lucide-react'
+import { Star, FileText, Users, LayoutDashboard, Settings, GraduationCap } from 'lucide-react'
 
 const nav = [
   { icon: LayoutDashboard, label: 'Painel' },
   { icon: FileText, label: 'Prompts' },
+  { icon: GraduationCap, label: 'Aulas' },
   { icon: Users, label: 'Usuárias' },
   { icon: Settings, label: 'Ajustes' },
 ]
@@ -14,7 +15,7 @@ export function BrowserFrame({
   children,
 }: {
   url: string
-  active: 'Prompts' | 'Usuárias'
+  active: 'Prompts' | 'Aulas' | 'Usuárias'
   children: ReactNode
 }) {
   return (

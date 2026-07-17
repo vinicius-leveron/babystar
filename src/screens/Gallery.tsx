@@ -23,7 +23,7 @@ export function Gallery() {
           Jornada e telas do <span className="text-gradient-gold">BabyStar</span>
         </h1>
         <p className="mt-3 max-w-[640px] text-[15px] leading-relaxed text-ink2">
-          App de sono infantil guiado pelo Método GPS da Dra. Denise Gurgel. Protótipo navegável — <b className="font-semibold text-ink">teste o app</b> percorrendo o fluxo completo, ou clique em qualquer tela abaixo para abri-la direto. 19 telas de app + 2 de painel admin, cobrindo todos os módulos e as histórias US 2.1 a 2.9.
+          App de sono infantil guiado pelo Método GPS da Dra. Denise Gurgel. Protótipo navegável — <b className="font-semibold text-ink">teste o app</b> percorrendo o fluxo completo, ou clique em qualquer tela abaixo para abri-la direto. 20 telas de app + 3 de painel admin, cobrindo todos os módulos do produto.
         </p>
         <div className="mt-6 flex flex-wrap items-center gap-3">
           <Link
@@ -89,11 +89,6 @@ function ScreenCard({ s }: { s: (typeof screens)[number] }) {
             <s.Component />
           </div>
         </div>
-        {s.us && (
-          <span className="absolute -top-2.5 right-3 rounded-full bg-gold-grad px-2.5 py-1 text-[11px] font-extrabold text-[#251A05] shadow-md">
-            {s.us}
-          </span>
-        )}
       </div>
       <div className={`mt-3 ${isAdmin ? 'w-[336px]' : 'w-[173px]'}`}>
         <p className="flex items-center gap-1.5 text-[14px] font-extrabold">

@@ -11,18 +11,22 @@ export function Conteudo() {
     <PhoneFrame seed={161}>
       <ScreenHeader title="Aprender" />
       <div className="flex flex-1 flex-col overflow-y-auto no-scrollbar px-[22px] pb-4 pt-1">
-        {/* destaque */}
+        {/* destaque — aula em vídeo */}
         <button
-          onClick={() => nav('/conteudo/artigo')}
+          onClick={() => nav('/conteudo/video')}
           className="mb-4 flex flex-col overflow-hidden rounded-2xl border border-gold/25 bg-gold/[0.06] text-left"
         >
-          <div className="flex h-[104px] items-center justify-center bg-gradient-to-br from-[#241C08] to-[#141A38] text-4xl">
+          <div className="relative flex h-[120px] items-center justify-center bg-gradient-to-br from-[#241C08] via-[#1A2350] to-[#141A38] text-4xl">
             🌙
+            <span className="absolute flex h-12 w-12 items-center justify-center rounded-full bg-gold-grad text-[#251A05] shadow-gold">
+              <Play size={22} fill="currentColor" />
+            </span>
+            <span className="absolute bottom-2 right-2 rounded-md bg-black/50 px-1.5 py-0.5 text-[10.5px] font-bold text-ink backdrop-blur">4:00</span>
           </div>
           <div className="p-4">
-            <span className="bs-label">Aula da Dra. Denise</span>
-            <p className="mt-1 text-[16px] font-extrabold leading-tight">Por que o bebê acorda à noite</p>
-            <p className="mt-1 text-[12.5px] text-ink2">A novidade é que isso é normal — e tem explicação.</p>
+            <span className="bs-label">Aula em vídeo · Dra. Denise</span>
+            <p className="mt-1 text-[16px] font-extrabold leading-tight">O que é pressão de sono</p>
+            <p className="mt-1 text-[12.5px] text-ink2">De mãe pra mãe: o conceito que faz a rotina funcionar.</p>
           </div>
         </button>
 
@@ -33,7 +37,7 @@ export function Conteudo() {
               {sec.items.map((it) => (
                 <button
                   key={it.title}
-                  onClick={() => nav('/conteudo/artigo')}
+                  onClick={() => nav(it.kind === 'vídeo' ? '/conteudo/video' : '/conteudo/artigo')}
                   className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.05] px-3.5 py-3 text-left"
                 >
                   <div className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-white/[0.06] text-gold">
